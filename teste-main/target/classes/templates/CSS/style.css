@@ -1,0 +1,15 @@
+.button {
+    color:blueviolet;
+}
+
+.nav-link, .navbar-brand{
+    color: #fff!important;   
+}
+.card-header, .bloco-oferecemos, footer{
+    color: #fff;   	
+    
+}
+.bgfundo{
+	background-image:url(/homem-tiro-medio-usando-oculos-vr.jpg);
+}
+
