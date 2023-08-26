@@ -4,44 +4,51 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-
 @Entity
 public class ProjetoModel {
-
-	@NotNull(message = "Campo obrigatório")
-	@Size(min =  2, max = 254, message="Nome deve conter entre 5 e 254 caracteres")
-	private String nome;
-	
-	private char sexo;
-	
-	@NotNull (message = "Campo obrigatório")
-	@Size(min =  2, max = 254, message="E-mail deve conter entre 5 e 254 caracteres")
-	private String email;
-	
-	private int telefone;
-	
-	@NotNull (message = "Campo obrigatório")
-	@Size(min =  2, max = 254, message="Endereço deve conter entre 5 e 254 caracteres")
-	private String endereco;
-	
-	@NotNull (message = "Campo obrigatório")
-	@Size(min =  2, max = 254, message="Bairro deve conter entre 5 e 254 caracteres")
-	private String bairro;
-	@NotNull (message = "Campo obrigatório")
-	@Size(min =  2, max = 254, message="Cidade deve conter entre 5 e 254 caracteres")
-	private String cidade;
-	
-	private int cep;
-	private String uf;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-
+	@NotNull (message = "Campo obrigatório")
+	@Size(min =  2, max = 254, message="Nome deve conter entre 5 e 254 caracteres")
+	private String nome;
+	
+	@NotNull (message = "Campo obrigatório")
+	@Size(min =  2, max = 254, message="Nome deve conter entre 5 e 254 caracteres")
+	private String email;
+	
+	@Min(0)
+	private int telefone;
+	
+	@NotNull (message = "Campo obrigatório")
+	@Size(min =  2, max = 254, message="Nome deve conter entre 5 e 254 caracteres")
+	private String areaIntesse;
+	
+	@NotNull (message = "Campo obrigatório")
+	@Size(min =  2, max = 254, message="Nome deve conter entre 5 e 254 caracteres")
+	private String endereco;
+	
+	@NotNull (message = "Campo obrigatório")
+	@Size(min =  2, max = 254, message="Nome deve conter entre 5 e 254 caracteres")
+	private String bairro;
+	
+	@NotNull (message = "Campo obrigatório")
+	@Size(min =  2, max = 254, message="Nome deve conter entre 5 e 254 caracteres")
+	private String cidade;
+	
+	@Min(0)
+	private int cep;
+	
+	private String uf;
+	private boolean confirmacao;
+	
+	
 	public Long getId() {
 		return id;
 	}
@@ -54,12 +61,6 @@ public class ProjetoModel {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public char getSexo() {
-		return sexo;
-	}
-	public void setSexo(char sexo) {
-		this.sexo = sexo;
-	}
 	public String getEmail() {
 		return email;
 	}
@@ -71,6 +72,12 @@ public class ProjetoModel {
 	}
 	public void setTelefone(int telefone) {
 		this.telefone = telefone;
+	}
+	public String getAreaIntesse() {
+		return areaIntesse;
+	}
+	public void setAreaIntesse(String areaIntesse) {
+		this.areaIntesse = areaIntesse;
 	}
 	public String getEndereco() {
 		return endereco;
@@ -102,4 +109,11 @@ public class ProjetoModel {
 	public void setUf(String uf) {
 		this.uf = uf;
 	}
+	public boolean isConfirmacao() {
+		return confirmacao;
+	}
+	public void setConfirmacao(boolean confirmacao) {
+		this.confirmacao = confirmacao;
+	}
+
 }
